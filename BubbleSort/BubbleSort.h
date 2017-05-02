@@ -17,9 +17,12 @@ void Swap(T &first, T &second) {
 
 template<class T>
 void BubbleSort(T array[], size_t size) {
-    for(size_t index = 0; index < size; index++) {
+    bool flag = true;
+    for(size_t index = 0; index < size && flag; index++) {
+        flag = false;
         for (size_t course = size-1; course>0; course--) {
             if (array[course-1] > array[course]) {
+                flag = true;
                 Swap(array[course-1], array[course]);
             }
         }
